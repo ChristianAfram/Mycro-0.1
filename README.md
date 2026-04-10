@@ -27,6 +27,46 @@ Mycro is a desktop AI assistant application that provides intelligent conversati
 - Context-aware responses
 - MCP (Model Context Protocol) support
 
+## Theme System
+
+Mycro features a customizable theme system with base themes and accent colors:
+
+### Base Themes
+
+| Theme | Description |
+|-------|-------------|
+| **Dark Mode** | Deep dark background with purple accents (default) |
+| **Light Mode** | Clean white/gray interface with vibrant accents |
+
+### Accent Colors
+
+| Color | Hex Code |
+|-------|----------|
+| **Purple** | `#6D28D9` (default) |
+| **Blue** | `#2563EB` |
+| **Green** | `#059669` |
+| **Orange** | `#D97706` |
+| **Red** | `#DC2626` |
+
+### Theme Preview
+
+```
+┌─────────────────────────────────────────────────┐
+│  ┌─────────┐  ┌─────────────────────────────┐  │
+│  │ Profile │  │  Theme Selection             │  │
+│  │─────────│  │                             │  │
+│  │Preferences│  │  ┌─────────┐ ┌─────────┐  │  │
+│  │─────────│  │  │  Dark   │ │  Light  │  │  │
+│  │  Apps   │  │  │ (active)│ │         │  │  │
+│  │─────────│  │  └─────────┘ └─────────┘  │  │
+│  │Notific..│  │                             │  │
+│  │         │  │  Accent: ○ Purple ○ Blue   │  │
+│  └─────────┘  │          ○ Green ○ Orange  │  │
+│               │          ○ Red             │  │
+│               └─────────────────────────────┘  │
+└─────────────────────────────────────────────────┘
+```
+
 ## Tech Stack
 
 - **Frontend**: React + TypeScript + Vite
