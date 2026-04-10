@@ -15,7 +15,7 @@
 ---
 
 ## Overview
-
+BETA VERSION - STILL UNDER DEVELOPMENT !!
 Mycro is a desktop AI assistant application that provides intelligent conversation, context management, and various AI-powered features.
 
 ## Features
