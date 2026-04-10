@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* === Mycro Dynamic Theme System === */
+
+:root {
+  /* Default variables (Dark / Purple) */
+  --bg-base: #0F0B14;
+  --bg-panel: #0d0a15;
+  --text-main: #E9D5FF;
+  --panel-border: rgba(139, 92, 246, 0.15);
+  
+  --accent-main: #6d28d9;
+  --accent-active: #c4b5fd;
+  --accent-glow: rgba(167, 139, 250, 0.6);
+  --accent-wave: #3b2466;
+  --scrollbar-thumb: rgba(109, 40, 217, 0.3);
+  --scrollbar-hover: rgba(109, 40, 217, 0.5);
+}
+
+/* Base Themes (Light/Dark) */
+body[data-theme="dark"] {
+  --bg-base: #0F0B14;
+  --bg-panel: #0d0a15;
+  --text-main: #E9D5FF;
+}
+
+body[data-theme="light"] {
+  --bg-base: #F8FAFC;
+  --bg-panel: #FFFFFF;
+  --text-main: #0F172A;
+}
+
+/* Accent Colors */
+body[data-accent="purple"] {
+  --panel-border: rgba(139, 92, 246, 0.15);
+  --accent-main: #6D28D9;
+  --accent-active: #C4B5FD;
+  --accent-glow: rgba(167, 139, 250, 0.6);
+  --accent-wave: #3B2466;
+  --scrollbar-thumb: rgba(109, 40, 217, 0.3);
+  --scrollbar-hover: rgba(109, 40, 217, 0.5);
+}
+
+body[data-accent="blue"] {
+  --panel-border: rgba(59, 130, 246, 0.15);
+  --accent-main: #2563EB;
+  --accent-active: #93C5FD;
+  --accent-glow: rgba(96, 165, 250, 0.6);
+  --accent-wave: #1E3A8A;
+  --scrollbar-thumb: rgba(37, 99, 235, 0.3);
+  --scrollbar-hover: rgba(37, 99, 235, 0.5);
+}
+
+body[data-accent="green"] {
+  --panel-border: rgba(16, 185, 129, 0.15);
+  --accent-main: #059669;
+  --accent-active: #6EE7B7;
+  --accent-glow: rgba(52, 211, 153, 0.6);
+  --accent-wave: #064E3B;
+  --scrollbar-thumb: rgba(5, 150, 105, 0.3);
+  --scrollbar-hover: rgba(5, 150, 105, 0.5);
+}
+
+body[data-accent="orange"] {
+  --panel-border: rgba(245, 158, 11, 0.15);
+  --accent-main: #D97706;
+  --accent-active: #FCD34D;
+  --accent-glow: rgba(251, 191, 36, 0.6);
+  --accent-wave: #78350F;
+  --scrollbar-thumb: rgba(217, 119, 6, 0.3);
+  --scrollbar-hover: rgba(217, 119, 6, 0.5);
+}
+
+body[data-accent="red"] {
+  --panel-border: rgba(239, 68, 68, 0.15);
+  --accent-main: #DC2626;
+  --accent-active: #FCA5A5;
+  --accent-glow: rgba(248, 113, 113, 0.6);
+  --accent-wave: #7F1D1D;
+  --scrollbar-thumb: rgba(220, 38, 38, 0.3);
+  --scrollbar-hover: rgba(220, 38, 38, 0.5);
+}
+
+/* === Base Reset === */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  -webkit-app-region: no-drag;
+}
+
+button, input, select {
+  -webkit-app-region: no-drag;
+}
+
+/* === Glassmorphism Panel === */
+.glass-panel {
+  background: rgba(23, 17, 34, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* === Pulse Ring Animation === */
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(0.9); opacity: 0; }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* === Waveform Bar Animation === */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+/* === Spinner === */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 1.5s linear infinite;
+}
+
+/* === Fade In === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover); }

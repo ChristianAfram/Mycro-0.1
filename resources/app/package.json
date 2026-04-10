@@ -1,0 +1,50 @@
+{
+  "name": "mycro",
+  "version": "1.0.0",
+  "description": "Lightweight local dictation assistant for Windows",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "dev": "tsc && concurrently \"npm:dev:renderer\" \"npm:dev:main\"",
+    "dev:renderer": "vite --config src/renderer/vite.config.ts",
+    "dev:main": "electron dist/main/index.js",
+    "build": "tsc && vite build --config src/renderer/vite.config.ts",
+    "start": "electron dist/main/index.js",
+    "dist": "npm run build && electron-packager . Mycro --platform=win32 --arch=x64 --out=release --overwrite --icon=build/icon.ico"
+  },
+  "keywords": [
+    "dictation",
+    "electron",
+    "windows",
+    "voice"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^25.5.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "clsx": "^2.1.1",
+    "electron-log": "^5.4.3",
+    "electron-store": "^11.0.2",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.8.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.0",
+    "tailwind-merge": "^3.5.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "autoprefixer": "^10.4.27",
+    "concurrently": "^9.2.1",
+    "electron": "^41.2.0",
+    "electron-builder": "^26.8.1",
+    "electron-packager": "^17.1.2",
+    "png-to-ico": "^3.0.1",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^4.2.2"
+  }
+}
